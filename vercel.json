@@ -1,7 +1,7 @@
 {
   "experimentalServices": {
-    "frontend": {
-      "entrypoint": "frontend",
+    "client": {
+      "entrypoint": "client",
       "routePrefix": "/",
       "framework": "vite"
     },
