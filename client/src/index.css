@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Playfair Display', serif;
+  
+  --color-gold-50: #fbf9f1;
+  --color-gold-100: #f5eed8;
+  --color-gold-200: #ecdbb0;
+  --color-gold-300: #e0c27e;
+  --color-gold-400: #d6a754;
+  --color-gold-500: #cb8e34;
+  --color-gold-600: #b06f28;
+  --color-gold-700: #925324;
+  --color-gold-800: #784223;
+  --color-gold-900: #623620;
+
+  --color-luxury-950: #050505;
+  --color-luxury-900: #0a0a0a;
+  --color-luxury-800: #141414;
+  --color-luxury-700: #1f1f1f;
+  --color-luxury-600: #2e2e2e;
+}
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #0a0a0a;
+  color: #e5e5e5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2e2e2e; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #d6a754; }
+
+/* Advanced Glassmorphism */
+.glass-panel {
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-pill {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(214, 167, 84, 0.15);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+/* Ambient glow animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; filter: blur(40px); }
+  50% { opacity: 0.7; filter: blur(50px); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+/* Skeleton loading shimmer for dark mode */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #141414 25%, #1f1f1f 50%, #141414 75%);
+  background-size: 800px 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Text Gradients */
+.text-gradient-gold {
+  background: linear-gradient(to right, #f5eed8, #d6a754, #b06f28);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ─── Luxury Input Fields ─── */
+.luxury-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #f5f5f4;
+  font-size: 15px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.luxury-input::placeholder {
+  color: #57534e;
+  font-weight: 300;
+}
+.luxury-input:focus {
+  border-color: rgba(214, 167, 84, 0.4);
+  box-shadow: 0 0 0 3px rgba(214, 167, 84, 0.08), 0 0 20px rgba(214, 167, 84, 0.06);
+  background: rgba(255, 255, 255, 0.05);
+}
+.luxury-input:hover:not(:focus) {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* With icon padding */
+.luxury-input-icon {
+  padding-left: 48px;
+}
+
+/* ─── Browser Autofill Override ─── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #141414 inset !important;
+  -webkit-text-fill-color: #f5f5f4 !important;
+  caret-color: #f5f5f4 !important;
+  border-color: rgba(214, 167, 84, 0.3) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Date/time inputs in dark mode */
+input[type="date"],
+input[type="time"] {
+  color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7) sepia(0.5) hue-rotate(5deg);
+  cursor: pointer;
+}
+
+/* Number input spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.3;
+}
