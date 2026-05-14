@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './index.css';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = import.meta.env.PROD
+  ? '/_/backend'            // Vercel: same domain, routed by experimentalServices
+  : 'http://127.0.0.1:8000'; // Local dev: FastAPI on port 8000
 
 function App() {
   // ── Week 1 State ──
