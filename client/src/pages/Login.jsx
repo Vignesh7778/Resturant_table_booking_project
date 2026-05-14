@@ -93,7 +93,7 @@ export default function Login() {
                   <span className="text-gold-500">Admin</span><br/>admin@restaurant.com<br/>pw: admin123
                 </div>
                 <div className="glass-panel px-4 py-2 rounded-lg border-white/5">
-                  <span className="text-gold-500">Staff</span><br/>staff@restaurant.com<br/>pw: admin123
+                  <span className="text-gold-500">Staff</span><br/>staff@restaurant.com<br/>pw: staff123
                 </div>
               </div>
             </div>
