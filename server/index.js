@@ -29,8 +29,11 @@ app.get('/', (req, res) => {
 // ── Error handler ──
 app.use(errorHandler);
 
-// ── Initialize DB schema + start server ──
+// ── Initialize DB schema + start server (Only for local dev) ──
 async function startServer() {
+  // Skip migrations and app.listen in Vercel serverless environment
+  if (process.env.VERCEL) return;
+
   try {
     const schemaPath = path.join(__dirname, 'database', 'schema.sql');
     const schema = fs.readFileSync(schemaPath, 'utf-8');
@@ -51,3 +54,6 @@ async function startServer() {
 }
 
 startServer();
+
+// Required for Vercel deployment
+module.exports = app;

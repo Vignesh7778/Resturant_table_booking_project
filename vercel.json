@@ -5,9 +5,9 @@
       "routePrefix": "/",
       "framework": "vite"
     },
-    "backend": {
-      "entrypoint": "backend",
-      "routePrefix": "/_/backend"
+    "server": {
+      "entrypoint": "server",
+      "routePrefix": "/api"
     }
   }
 }

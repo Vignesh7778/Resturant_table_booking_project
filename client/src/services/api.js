@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.PROD 
-  ? '/_/backend' 
+  ? '/api' 
   : 'http://localhost:5000/api'; // Or http://localhost:8000 depending on which backend you run locally
 
 const API = axios.create({ baseURL: API_BASE_URL });
