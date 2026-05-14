@@ -15,14 +15,20 @@ app.use(cors());
 app.use(express.json());
 
 // ── Routes ──
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/restaurants', require('./routes/restaurants'));
-app.use('/api/bookings', require('./routes/bookings'));
-app.use('/api/staff', require('./routes/staff'));
-app.use('/api/admin', require('./routes/admin'));
+const apiRouter = express.Router();
+apiRouter.use('/auth', require('./routes/auth'));
+apiRouter.use('/restaurants', require('./routes/restaurants'));
+apiRouter.use('/bookings', require('./routes/bookings'));
+apiRouter.use('/staff', require('./routes/staff'));
+apiRouter.use('/admin', require('./routes/admin'));
+
+// Vercel experimentalServices strips the "/api" prefix. 
+// Locally we need "/api", but on Vercel we mount at "/"
+const prefix = process.env.VERCEL ? '/' : '/api';
+app.use(prefix, apiRouter);
 
 // ── Health check ──
-app.get('/', (req, res) => {
+app.get(process.env.VERCEL ? '/' : '/api', (req, res) => {
   res.json({ message: 'Restaurant Booking API is running', version: '3.0.0' });
 });
 
