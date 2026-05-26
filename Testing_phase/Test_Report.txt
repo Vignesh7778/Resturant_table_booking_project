@@ -1,0 +1,55 @@
+╔══════════════════════════════════════════════════════════════╗
+║     RESTAURANT TABLE BOOKING — SELENIUM TEST REPORT        ║
+╚══════════════════════════════════════════════════════════════╝
+
+  Generated      : 2026-05-26 10:43:20
+  Execution Start: 2026-05-26 10:40:40
+  Execution End  : 2026-05-26 10:43:20
+  Application URL: http://localhost:5173
+  Browser        : Chrome (Automated)
+
+──────────────────────────────────────────────────────────────
+  DETAILED RESULTS
+──────────────────────────────────────────────────────────────
+
+  [PASS]  TC01 — Application Launch
+  [PASS]  TC02 — Home Page Navigation
+  [PASS]  TC03 — Navigate to Restaurants
+  [PASS]  TC04 — Navigate to Login
+  [PASS]  TC05 — Navigate to Register
+  [PASS]  TC06 — Signup Empty Fields
+  [PASS]  TC07 — Signup Short Password
+  [PASS]  TC08 — Valid Signup
+  [PASS]  TC09 — Logout After Signup
+  [PASS]  TC10 — Login Empty Fields
+  [PASS]  TC11 — Login Wrong Password
+  [PASS]  TC12 — Valid User Login
+  [PASS]  TC13 — Navigate to Restaurant Booking
+  [PASS]  TC14 — Check Table Availability
+  [PASS]  TC15 — Select Table and Book
+  [PASS]  TC16 — Booking History Visible
+  [PASS]  TC17 — User Logout
+  [PASS]  TC18 — Admin Login
+  [PASS]  TC19 — Admin Dashboard Loads
+  [PASS]  TC20 — Operations Page Loads
+  [PASS]  TC21 — Pending Bookings Visible
+  [PASS]  TC22 — Admin Logout
+  [PASS]  TC23 — Navbar Visible
+  [PASS]  TC24 — Home Hero Content
+  [PASS]  TC25 — Footer Visible
+
+──────────────────────────────────────────────────────────────
+  SUMMARY
+──────────────────────────────────────────────────────────────
+
+  Total Tests : 25
+  Passed      : 25
+  Failed      : 0
+  Pass Rate   : 100.0%
+  Screenshots : test_screenshots\
+
+  ✅ ALL TESTS PASSED SUCCESSFULLY
+
+══════════════════════════════════════════════════════════════
+  END OF REPORT
+══════════════════════════════════════════════════════════════
